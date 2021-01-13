@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Bibliotek.Models.Bookloan>
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Centrum Biblioteket</h1>
+<h3>Sena återlämningar</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Book Titel
+            </th>
+            <th>
+                ISBN
+            </th>
+            <th>
+                Namn
+            </th>
+            <th>
+                Telefon Nummer
+            </th>
+            <th>
+                Låne Datum
+            </th>
+            <th>
+                Retur Datum
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventory.Book.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inventory.Book.Isbn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)&nbsp;
+                @Html.DisplayFor(modelItem => item.Customer.LastName)&nbsp;
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
