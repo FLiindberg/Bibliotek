@@ -1,2 +1,12 @@
-﻿body { 
+﻿html, body, strong, b {
+    font-family: inherit;
+    font-style: inherit;
+}
+p {
+    word-spacing: 30px;
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
